@@ -59,6 +59,10 @@ public class TrainControllerImpl implements TrainController {
 		}
 		enforceSpeedLimit();
 	}
-
+	
+	@Override
+	public int getSpeedLimit() {
+		return speedLimit;
+	}
 
 }

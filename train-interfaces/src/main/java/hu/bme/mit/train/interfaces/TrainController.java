@@ -12,6 +12,6 @@ public interface TrainController {
 
 	void emergencyBreak();
 	
-	
+	int getSpeedLimit();
 
 }
