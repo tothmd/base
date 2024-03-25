@@ -1,12 +1,14 @@
 package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
+import hu.bme.mit.train.interfaces.TrainUserImpl;
 
 public class TrainControllerImpl implements TrainController {
 
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
+	private TrainUserImpl trainUser;
 
 	@Override
 	public void followSpeed() {
@@ -50,4 +52,12 @@ public class TrainControllerImpl implements TrainController {
 		referenceSpeed = 0;
 	}
 
+	public reacttoJoystick(){
+		if (trainUser.joystickPosition > 0){
+			referenceSpeed += 1;
+		}
+		else if (trainUser.joystickPosition < 0){
+			referenceSpeed -= 1;
+		}
+	}
 }
